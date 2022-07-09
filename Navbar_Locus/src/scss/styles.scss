@@ -9,6 +9,8 @@
 }
 
 body {
+  background: #ffffff;
+  position: relative;
   font-family: "Poppins", sans-serif;
   font-size: 14px;
 }
@@ -28,5 +30,22 @@ ul {
   box-sizing: content-box;
 }
 
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 7px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #ffffff;
+  padding: 0 44px;
+  height: 40px;
+  background-color: #58a9a5;
+  transition: all 0.4s;
+
+  &:hover {
+    background-color: #48beb8;
+  }
+}
 //_Styles:
 @import "header.scss";
