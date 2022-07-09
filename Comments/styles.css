@@ -49,16 +49,6 @@ h1::before {
   padding: 25px;
   background-color: #21a183;
 }
-.comment::before {
-  position: absolute;
-  content: "";
-  opacity: 0.08;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  background: url(../src/images/texture.jpg) no-repeat;
-}
 .comment__image {
   position: relative;
 }
@@ -70,8 +60,8 @@ h1::before {
   height: 135px;
   width: 135px;
   border-radius: 50%;
-  background-color: #ffffff;
-  opacity: 0.9;
+  background-color: #98efda;
+  opacity: 0.8;
 }
 .comment__photo {
   position: relative;
@@ -85,6 +75,8 @@ h1::before {
   margin: 0px 0px 5px 0px;
 }
 .comment__photo img {
+  position: absolute;
+  top: -10px;
   max-width: 100%;
 }
 .comment__author {
@@ -94,6 +86,7 @@ h1::before {
 }
 .comment__profession {
   margin: 0px 0px 15px 0px;
+  letter-spacing: 0.05em;
 }
 .comment__text {
   font-style: italic;

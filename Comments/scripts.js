@@ -1,3 +1,4 @@
+/* DATA */
 const users = [
   {
     id: 1,
@@ -48,3 +49,41 @@ const users = [
       "Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.",
   },
 ];
+
+/* VARIABLE */
+const PHOTO = document.querySelector(".comment__photo img");
+const AUTHOR = document.querySelector(".comment__author");
+const PROFESSION = document.querySelector(".comment__profession");
+const TEXT = document.querySelector(".comment__text");
+
+const BTN__NEXT = document.querySelector(".btn__next");
+const BTN__PREV = document.querySelector(".btn__prev");
+
+let index = 0;
+
+window.addEventListener("DOMContentLoaded", function () {
+  updateComment();
+});
+
+BTN__NEXT.addEventListener("click", function (e) {
+  e.preventDefault();
+  index++;
+  if (index > users.length - 1) index = 0;
+  updateComment();
+});
+
+BTN__PREV.addEventListener("click", function (e) {
+  e.preventDefault();
+  index--;
+  if (index < 0) index = users.length - 1;
+  updateComment();
+});
+
+function updateComment() {
+  let USER = users[index];
+  PHOTO.src = USER.img;
+  PHOTO.alt = USER.fullName;
+  AUTHOR.textContent = USER.fullName;
+  PROFESSION.textContent = USER.profession;
+  TEXT.textContent = USER.comment;
+}
