@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
     <title>Navbar_Locus</title>
-    <script src="scripts.js"></script>
   </head>
   <body>
     <header class="header">
@@ -15,19 +14,22 @@
           <img class="logo__image" src="/src/images/logo.svg" alt="Logo" />
           <p class="logo__text">Locus</p>
         </a>
-        <nav class="header__menu menu">
+        <div class="header__menu menu">
           <div class="menu__icon">
             <span></span>
           </div>
-          <ul class="menu__list">
-            <li><a href="#" class="menu__link active-link">Home</a></li>
-            <li><a href="#" class="menu__link">Contact</a></li>
-            <li><a href="#" class="menu__link">Location</a></li>
-            <li><a href="#" class="menu__link">About Us</a></li>
-          </ul>
-        </nav>
-        <a href="#" class="header__btn btn">Sign Up</a>
+          <nav class="menu__body">
+            <ul class="menu__list">
+              <li><a href="#" class="menu__link active">Home</a></li>
+              <li><a href="#" class="menu__link">Contact</a></li>
+              <li><a href="#" class="menu__link">Location</a></li>
+              <li><a href="#" class="menu__link">About Us</a></li>
+            </ul>
+            <a href="#" class="menu__btn btn">Sign Up</a>
+          </nav>
+        </div>
       </div>
     </header>
+    <script src="scripts.js"></script>
   </body>
 </html>

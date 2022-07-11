@@ -58,6 +58,7 @@ ul {
   justify-content: space-between;
 }
 .logo {
+  z-index: 10;
   display: flex;
   align-items: center;
   gap: 14px;
@@ -68,10 +69,56 @@ ul {
   color: #58a9a5;
 }
 
+.menu__icon {
+  display: none;
+  position: relative;
+  z-index: 10;
+  width: 30px;
+  height: 24px;
+  cursor: pointer;
+}
+.menu__icon.active span {
+  top: 50%;
+  transform: scale(0) translateY(-50%);
+}
+.menu__icon.active::after {
+  top: 50%;
+  transform: rotate(-45deg) translate(0, -70%);
+}
+.menu__icon.active::before {
+  bottom: 50%;
+  transform: rotate(45deg) translate(0, 50%);
+}
+.menu__icon span, .menu__icon::after, .menu__icon::before {
+  position: absolute;
+  left: 0;
+  height: 15%;
+  width: 100%;
+  background-color: #58a9a5;
+  transition: all 0.4s;
+}
+.menu__icon::after, .menu__icon::before {
+  content: "";
+}
+.menu__icon span {
+  top: 50%;
+  transform: scale(1) translateY(-50%);
+}
+.menu__icon::after {
+  top: 0;
+}
+.menu__icon::before {
+  bottom: 0;
+}
+.menu__body {
+  display: flex;
+  align-items: center;
+}
 .menu__list {
   display: flex;
   align-items: center;
   gap: 40px;
+  margin: 0px 80px 0px 0px;
 }
 .menu__link {
   font-size: 20px;
@@ -82,13 +129,13 @@ ul {
   color: #58a9a5;
   text-shadow: 0 0 1.2px #58a9a5, 0 0 1.2px #58a9a5, 0 0 1.2px #58a9a5;
 }
-.menu__link.active-link {
+.menu__link.active {
   position: relative;
   color: #58a9a5;
   text-shadow: 0 0 1.2px #58a9a5, 0 0 1.2px #58a9a5, 0 0 1.2px #58a9a5;
   padding-bottom: 6px;
 }
-.menu__link.active-link::before {
+.menu__link.active::before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -98,4 +145,43 @@ ul {
   width: 60%;
   border-radius: 20px;
   background-color: #fec62d;
+}
+@media (max-width: 991.98px) {
+  .menu__icon {
+    display: block;
+  }
+  .menu__body {
+    position: fixed;
+    background-color: #ffffff;
+    right: -100%;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: auto;
+    flex-direction: column;
+    padding-top: 123px;
+    padding-bottom: 30px;
+    transition: right 0.4s ease 0s;
+  }
+  .menu__body::before {
+    content: "";
+    z-index: 5;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 123px;
+    background-color: #ffffff;
+  }
+  .menu__body.active {
+    right: 0%;
+  }
+  .menu__body.active::before {
+    right: 0%;
+  }
+  .menu__list {
+    flex-direction: column;
+    gap: 40px;
+    margin: 0px 0px 40px 0px;
+  }
 }
