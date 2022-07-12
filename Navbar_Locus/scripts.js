@@ -1,9 +1,11 @@
+const BODY = document.querySelector("body");
 const BTN_MENU = document.querySelector(".menu__icon");
 const MENU = document.querySelector(".menu__body");
 const MENU_LINKS = MENU.querySelectorAll(".menu__link");
 
 BTN_MENU.addEventListener("click", function () {
   MENU.classList.toggle("active");
+  BODY.classList.toggle("lock");
   BTN_MENU.classList.toggle("active");
 });
 
