@@ -8,6 +8,52 @@
     <title>Modal</title>
   </head>
   <body>
+    <div class="wrapper">
+      <a href="#" class="btn login-btn">Login</a>
+    </div>
+    <div class="modal__overlay">
+      <div class="modal">
+        <h3 class="modal__title">Login</h3>
+        <div class="modal__image">
+          <img src="/src/images/login.svg" alt="Login" />
+        </div>
+        <form action="#" method="post" class="modal__form login-form">
+          <input
+            class="login-form__name"
+            type="text"
+            placeholder="Username"
+            required
+          />
+          <input
+            type="password"
+            class="login-form__password"
+            placeholder="Password"
+            required
+          />
+          <a href="#" class="login-form__reset-password">Forgot password?</a>
+          <button class="btn login-form__subbmit" type="submit">Login</button>
+          <p>or</p>
+          <ul class="login-form__login-social-networks">
+            <li>
+              <a href="#"
+                ><img src="src/images/facebook.png" alt="facebook"
+              /></a>
+            </li>
+            <li>
+              <a href="#"><img src="src/images/twitter.png" alt="twitter" /></a>
+            </li>
+            <li>
+              <a href="#"
+                ><img src="src/images/google-plus.png" alt="google-plus"
+              /></a>
+            </li>
+          </ul>
+        </form>
+        <a href="#" class="modal__close"
+          ><img src="src/images/close.svg" alt="close"
+        /></a>
+      </div>
+    </div>
     <script src="scripts.js"></script>
   </body>
 </html>
