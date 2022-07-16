@@ -57,6 +57,10 @@ body {
   border-radius: 10px;
   padding: 35px;
   color: #fff;
+  transform: scale(0);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.8s;
 }
 .modal__overlay {
   position: fixed;
@@ -66,6 +70,18 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.8s;
+}
+.modal__overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+.modal__overlay.show .modal {
+  transform: scale(1);
+  opacity: 1;
+  visibility: visible;
 }
 .modal__title {
   margin: 30px 0px 30px 0px;
